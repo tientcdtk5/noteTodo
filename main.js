@@ -62,6 +62,7 @@ function createTodoItem(todo) {
   const checkboxElement = document.createElement("input");
   checkboxElement.type = "checkbox";
   checkboxElement.classList.add("todo__checkbox");
+  checkboxElement.style.marginRight = "5px";
   checkboxElement.addEventListener("change", updateTodo);
   // Nếu công việc đã hoàn thành
   if (todo.status) {
@@ -73,8 +74,8 @@ function createTodoItem(todo) {
 
   const buttonElement = document.createElement("button");
   buttonElement.classList.add("todo__delete__button");
-  buttonElement.textContent = `delete`; //sửa lại
-  buttonElement.style.marginLeft = "4px"; //sửa
+  buttonElement.textContent = `Delete`; //sửa lại
+  buttonElement.style.marginLeft = "10px"; //sửa
   buttonElement.addEventListener("click", deleteTodo);
 
   liElement.append(checkboxElement, titleElement, buttonElement);

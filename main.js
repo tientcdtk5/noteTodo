@@ -11,7 +11,7 @@ const filterForm = document.querySelector(".filter__form");
 function saveLocal() {
   // JSON.string(); // chuyển từ obj sang chuỗi
   // JSON.parse(); // Chuyển chuỗi thành obj
-  localStorage.setItem("todo", JSON.stringify(todos));
+  localStorage.setItem("todos", JSON.stringify(todos));
   // localStorage.getItem();
 }
 

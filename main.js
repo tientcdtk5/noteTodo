@@ -9,8 +9,7 @@ const clearButtonElement = document.querySelector(".todo__clear__button");
 const countElement = document.querySelector(".todo__count__value");
 const filterForm = document.querySelector(".filter__form");
 function saveLocal() {
-  // JSON.string(); // chuyển từ obj sang chuỗi
-  // JSON.parse(); // Chuyển chuỗi thành obj
+ 
   localStorage.setItem("todos", JSON.stringify(todos));
   // localStorage.getItem();
 }
@@ -32,7 +31,7 @@ function createNewtodo(title) {
 function deleteTodo(e) {
   const buttonElement = e.target;
   console.log(buttonElement);
-  const liElement = buttonElement.parentElement; // parent chứ ko phải prent
+  const liElement = buttonElement.parentElement; 
   const todoId = liElement.getAttribute("todo-id");
   liElement.remove();
 
@@ -74,8 +73,8 @@ function createTodoItem(todo) {
 
   const buttonElement = document.createElement("button");
   buttonElement.classList.add("todo__delete__button");
-  buttonElement.textContent = `Delete`; //sửa lại
-  buttonElement.style.marginLeft = "10px"; //sửa
+  buttonElement.textContent = `Delete`; 
+  buttonElement.style.marginLeft = "10px"; 
   buttonElement.addEventListener("click", deleteTodo);
 
   liElement.append(checkboxElement, titleElement, buttonElement);
@@ -144,26 +143,4 @@ filterForm.addEventListener("change", function (e) {
 });
 renderTodoList(todos);
 
-// Dưới đây là một số lệnh thường được sử dụng trong DOM:
 
-// document.getElementById(id): Tìm kiếm phần tử theo id và trả về đối tượng phần tử.
-
-//     document.getElementsByTagName(tagName): Tìm kiếm phần tử theo tên thẻ và trả về một mảng các đối tượng phần tử.
-
-//         document.createElement(tagName): Tạo một phần tử mới với tên thẻ được chỉ định và trả về đối tượng phần tử mới.
-
-//             element.innerHTML: Truy cập hoặc thiết lập nội dung HTML của phần tử.
-
-//                 element.style.property: Truy cập hoặc thiết lập thuộc tính CSS của phần tử.
-
-//                     element.getAttribute(name): Lấy giá trị của thuộc tính được chỉ định từ phần tử.
-
-//                         element.setAttribute(name, value): Thiết lập giá trị của thuộc tính được chỉ định cho phần tử.
-
-//                             element.appendChild(node): Thêm một nút con vào phần tử.
-
-//                                 element.removeChild(node): Xóa nút con khỏi phần tử.
-
-//                                     element.addEventListener(event, function): Gắn một hàm xử lý sự kiện cho phần tử.
-
-// Các lệnh này được sử dụng để tương tác với các phần tử trong DOM và thay đổi nội dung và hiển thị của chúng.
